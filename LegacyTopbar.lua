@@ -1,5 +1,6 @@
 
 --[[
+	Copyright (c) 2022 @MistedWafflez
 	License information avaliable at
 	https://github.com/MistedWafflez/LegacyTopbar/blob/main/LICENSE
 ]]
@@ -13,15 +14,19 @@ local LegacyTopbar = {}
 --(V1.2) | (2024-08-17 @ 16:51) | Added Warning that the system is discontinued.
 --(V1.3) | (2025-06-25 @ 08:15) | Optimized, simplified, and adjusted for functionality.
 --(V1.4) | (2025-08-04 @ 20:32) | Removed AutoLocalization.
+--(V1.5) | (2025-11-02 @ 15:14) | Added client script for applying voice chat inset.
 
 function LegacyTopbar:Load()
 	local LegacyTopbar = Instance.new("ScreenGui")
+	local ClientScript = script.Client:Clone()
 	local TopbarFrame = Instance.new("ScrollingFrame")
 	local UIListLayout = Instance.new("UIListLayout")
 	LegacyTopbar.Name = "LegacyTopbar"
 	LegacyTopbar.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 	LegacyTopbar.DisplayOrder = 10
 	LegacyTopbar.IgnoreGuiInset = true
+	ClientScript.Parent = LegacyTopbar
+	ClientScript.Enabled = true
 	TopbarFrame.Name = "TopbarFrame"
 	TopbarFrame.Parent = LegacyTopbar
 	TopbarFrame.Active = true
